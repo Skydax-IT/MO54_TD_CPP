@@ -5,7 +5,7 @@ Cette liste pourra vous guider dans le choix des étapes de refactoring en prés
 ## Rendre la liste chaînée compatible avec les appels du vector
 
 Cette tâche doit permettre d'utiliser la liste comme le vecteur. Pour le permettre, il est nécessaire :
- - de renommer `add_value` en `push_back`
+ - de renommer `add_value` to `push_back`
  - de renommer `clear_list` en `clear`
  - d'ajouter un iterateur à la classe, ainsi que les méthodes `begin` et `end` permettant de parcourir la liste, ainsi que l'opérateur `++` pour ces itérateurs.
  - d'ajouter l'opérateur `[]` pour accéder à une valeur par sa position.
