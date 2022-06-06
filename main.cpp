@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     data_list t;
-    t.from_binary("binary.bin");
+    t.from_binary("C:\\Users\\86180\\Desktop\\MO54_TD_CPP\\texte.txt");
     cout << "t:" << endl;
     t.print_data();
     //auto t2 = t.sort_table(false);
