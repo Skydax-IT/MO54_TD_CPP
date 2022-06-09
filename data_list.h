@@ -30,11 +30,11 @@ class values_list {
 public:
     values_list(): _head(nullptr), _tail(nullptr) {}
     values_list(const values_list &other);
-    ~values_list() {clear_list();}
+    ~values_list() {clear();}
     values_list &operator=(const values_list &other);
 
-    void clear_list();
-    void add_value(double v); // Always add at the end
+    void clear();
+    void push_back(double v); // Always add at the end
     void pop_element(); // Remove last element
     size_t size()const;
     double get_value(size_t position)const;
@@ -42,12 +42,16 @@ public:
     void sort_list(bool ascending);
 };
 
+class MyIterator;
+
 class data_list {
     values_list _values;
+    friend class MyIterator;
+
 public:
     data_list();
     data_list(const data_list &other);
-    ~data_list() {_values.clear_list();}
+    ~data_list() {_values.clear();}
 
     // Input methods
     void from_text(const std::string &source);
@@ -64,6 +68,27 @@ public:
     data_list average(); // returns a data_table with only one value
     data_list table_sum(); // returns a data_table with only one value
     data_list table_count(); // returns a data_table with only one value
+
+    // getMyIterator
+    MyIterator begin();
+    MyIterator end();
+
 };
+
+// Iterator for data_list
+class MyIterator : public std::iterator < std::forward_iterator_tag, double > {
+    data_list& dataList;
+    int loc;
+    friend class data_list;
+
+public:
+    explicit MyIterator(data_list& datalist);
+    double get_value();
+
+    MyIterator& operator++();
+    MyIterator operator++(int);
+    double operator[](int i);
+};
+
 
 #endif // DATA_LIST_H
