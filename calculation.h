@@ -27,8 +27,11 @@ public:
 class list_calculation:public calculation<data_list>
 {
     data_list datalist;
-    // TODO: initialization
 public:
+    list_calculation(data_list data){
+        this->datalist = data;
+    }
+
     data_list moving_average(size_t window_width);
     data_list sort_table(bool ascending=true);
     data_list average(); // returns a data_table with only one value
@@ -39,8 +42,11 @@ public:
 class table_calculation:public calculation<data_table>
 {
     data_table datatable;
-    // TODO: initialization
 public:
+    table_calculation(data_table table){
+        this->datatable = table;
+    }
+
     data_table moving_average(size_t window_width);
     data_table sort_table(bool ascending=true);
     data_table average(); // returns a data_table with only one value

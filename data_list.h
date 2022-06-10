@@ -45,10 +45,10 @@ public:
 class MyIterator;
 
 class data_list {
-    values_list _values;
     friend class MyIterator;
-
 public:
+    values_list _values;// change from private to public
+    
     data_list();
     data_list(const data_list &other);
     ~data_list() {_values.clear();}
