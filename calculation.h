@@ -28,6 +28,7 @@ class list_calculation:public calculation<data_list>
 {
     data_list datalist;
 public:
+public:
     list_calculation(data_list data){
         this->datalist = data;
     }
