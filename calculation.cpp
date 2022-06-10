@@ -20,11 +20,11 @@ data_list list_calculation::moving_average(size_t window_width) {
         for (size_t i=0; i<window_width; ++i) {
             current_sum += datalist._values.get_value(i);
         }
-        result._values.add_value(current_sum/window_width);
+        result._values.push_back(current_sum/window_width);
         for (size_t i=0; i+window_width<datalist._values.size(); ++i) {
             current_sum -= datalist._values.get_value(i);
             current_sum += datalist._values.get_value(i+window_width);
-            result._values.add_value(current_sum/window_width);
+            result._values.push_back(current_sum/window_width);
         }
     }
     return result;
@@ -39,7 +39,7 @@ data_list list_calculation::sort_table(bool ascending) {
 data_list list_calculation::average() {
     data_list result;
     data_list sum_table = table_sum();
-    result._values.add_value(sum_table._values.get_value(0) / datalist._values.size());
+    result._values.push_back(sum_table._values.get_value(0) / datalist._values.size());
     return result;
 }
 
@@ -49,13 +49,13 @@ data_list list_calculation::table_sum() {
     for (size_t i=0; i<datalist._values.size(); ++i) {
         current_sum += datalist._values.get_value(i);
     }
-    result._values.add_value(current_sum);
+    result._values.push_back(current_sum);
     return result;
 }
 
 data_list list_calculation::table_count() {
     data_list result;
-    result._values.add_value(static_cast<double>(datalist._values.size()));
+    result._values.push_back(static_cast<double>(datalist._values.size()));
     return result;
 }
 
