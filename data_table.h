@@ -5,9 +5,8 @@
 #include <string>
 
 class data_table {
-    
+    std::vector<double> _table;
 public:
-    std::vector<double> _table;// change from private to public
 
     data_table();
     ~data_table() {}

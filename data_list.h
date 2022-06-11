@@ -46,8 +46,8 @@ class MyIterator;
 
 class data_list {
     friend class MyIterator;
+    values_list _values;
 public:
-    values_list _values;// change from private to public
     
     data_list();
     data_list(const data_list &other);
