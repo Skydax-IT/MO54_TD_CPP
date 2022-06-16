@@ -26,7 +26,6 @@ public:
     storage_type* make_storage(const std::string& type);
     loader* make_reader(const std::string& type,std::string path_to_file);
     calculation* make_calculation(const std::string& type,size_t window_width);
-//    calculation* make_calculation(const std::string& type,bool ascending);
     calculation* make_calculation(const std::string& type);
     writer* make_writer(const std::string& type,const std::string& destination);
     writer* make_writer(const std::string& type);

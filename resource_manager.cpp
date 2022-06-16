@@ -48,17 +48,6 @@ calculation *resource_manager::make_calculation(const std::string &type, size_t 
     }
 }
 
-//calculation *resource_manager::make_calculation(const std::string &type, bool ascending) {
-//    if(type=="SORT"){
-//        sort_table cal= sort_table(ascending);
-//        calculation * out=&cal;
-//        return out;
-//    }else{
-//        std::cerr<<"No type of calculation!"<<std::endl;
-//        return nullptr;
-//    }
-//}
-
 calculation *resource_manager::make_calculation(const std::string &type) {
     if(type=="AVG"){
         avg= average();
